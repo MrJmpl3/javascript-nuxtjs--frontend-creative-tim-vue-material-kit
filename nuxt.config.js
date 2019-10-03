@@ -1,3 +1,6 @@
+import * as sass from 'sass'
+import * as fibers from 'fibers'
+
 export default {
   mode: 'universal',
   /*
@@ -14,7 +17,20 @@ export default {
         content: process.env.npm_package_description || ''
       }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [
+      {
+        rel: 'stylesheet',
+        type: 'text/css',
+        href:
+          'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons'
+      },
+      {
+        rel: 'stylesheet',
+        type: 'text/css',
+        href: 'https://use.fontawesome.com/releases/v5.0.8/css/all.css'
+      },
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+    ]
   },
   /*
    ** Customize the progress-bar color
@@ -23,11 +39,17 @@ export default {
   /*
    ** Global CSS
    */
-  css: [],
+  css: ['@/assets/styles.scss'],
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: [
+    '@/plugins/vue-material.js',
+    '@/plugins/vue-clickaway.js',
+    '@/plugins/v-tooltip.js',
+    { src: '@/plugins/vue-carousel.js', mode: 'client' },
+    '@/plugins/vue-social-sharing.js'
+  ],
   /*
    ** Nuxt.js dev-modules
    */
@@ -39,6 +61,21 @@ export default {
    ** Nuxt.js modules
    */
   modules: [],
+  loaders: {
+    sass: {
+      implementation: sass,
+      sassOptions: {
+        fiber: fibers
+      },
+      indentedSyntax: true
+    },
+    scss: {
+      implementation: sass,
+      sassOptions: {
+        fiber: fibers
+      }
+    }
+  },
   /*
    ** Build configuration
    */
