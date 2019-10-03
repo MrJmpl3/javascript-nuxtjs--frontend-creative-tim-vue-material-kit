@@ -1,8 +1,7 @@
 {
-  "name": "nuxt-creative-tim-vue-material-dashboard",
-  "description": "My lovely Nuxt.js project",
+  "name": "nuxt-creative-tim-vue-material-kit",
+  "description": "Nuxt version of Vue Material Kit of Creative Tim",
   "author": "MrJmpl3",
-  "private": true,
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
@@ -14,6 +13,8 @@
     "fibers": "^4.0.1",
     "nouislider": "^14.0.2",
     "nuxt": "^2.10.0",
+    "sass": "^1.22.9",
+    "sass-loader": "^8.0.0",
     "v-tooltip": "^2.0.2",
     "vue-carousel": "^0.18.0",
     "vue-clickaway": "^2.2.2",
@@ -29,8 +30,6 @@
     "eslint-config-prettier": "^6.3.0",
     "eslint-plugin-nuxt": ">=0.4.2",
     "eslint-plugin-prettier": "^3.0.1",
-    "prettier": "^1.16.4",
-    "sass": "^1.22.9",
-    "sass-loader": "^8.0.0"
+    "prettier": "^1.16.4"
   }
 }
